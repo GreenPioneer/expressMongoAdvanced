@@ -2,8 +2,8 @@
 var path = require('path'),
     mongoose = require('mongoose'),
     express = require('express'),
-    _ = require('lodash')
-bodyParser = require('body-parser');
+    _ = require('lodash'),
+    bodyParser = require('body-parser');
 
 mongoose.Promise = Promise;
 var options = {
@@ -240,7 +240,7 @@ app.put('/blogs/:id', function(req, res) {
             if (!blog) {
                 return res.sendStatus(404);
             }
-            res.json(blog);
+            res.status(200);
         })
         .catch(function(err) {
             console.error(err);
